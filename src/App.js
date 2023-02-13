@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+
 import './App.css';
+import FeedBackForm from './components/FeedBackForm';
+import ResponsiveAppBar from './components/ResponsiveAppBar';
+import { FeedBack } from './FeedBack';
+import {
+  BrowserRouter as Router,
+Routes,
+  Route
+} from "react-router-dom";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ResponsiveAppBar/>
+      <Router>
+      <Routes>
+         <Route path="/feedback" element={<FeedBackForm />}></Route>
+
+      </Routes>
+      </Router>
     </div>
   );
 }
